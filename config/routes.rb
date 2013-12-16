@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       post :filter
       get  :options
       get  :field_group
-      match :auto_complete
+      get :auto_complete
       post :redraw
       get :versions
     end
@@ -52,7 +52,7 @@ Rails.application.routes.draw do
       post :filter
       get  :options
       get  :field_group
-      post :auto_complete
+      get :auto_complete
       post :redraw
       get :versions
     end
@@ -72,7 +72,7 @@ Rails.application.routes.draw do
       post :filter
       get  :options
       get  :field_group
-      post :auto_complete
+      get :auto_complete
       post :redraw
       get :versions
     end
@@ -91,7 +91,7 @@ Rails.application.routes.draw do
       post :filter
       get  :options
       get  :field_group
-      post :auto_complete
+      get :auto_complete
       post :redraw
       get :versions
     end
@@ -114,7 +114,7 @@ Rails.application.routes.draw do
       post :filter
       get  :options
       get  :field_group
-      post :auto_complete
+      get :auto_complete
       post :redraw
       get :versions
     end
@@ -130,7 +130,7 @@ Rails.application.routes.draw do
   resources :tasks, :id => /\d+/ do
     collection do
       post :filter
-      post :auto_complete
+      get :auto_complete
     end
     member do
       put :complete
@@ -147,7 +147,7 @@ Rails.application.routes.draw do
     end
 
     collection do
-      match :auto_complete
+      get :auto_complete
     end
     collection do
       get :opportunities_overview
@@ -159,7 +159,7 @@ Rails.application.routes.draw do
 
     resources :users do
       collection do
-        post :auto_complete
+        get :auto_complete
       end
       member do
         get :confirm
@@ -179,7 +179,7 @@ Rails.application.routes.draw do
 
     resources :fields do
       collection do
-        post :auto_complete
+        get :auto_complete
         get :options
         post :redraw
         post :sort
